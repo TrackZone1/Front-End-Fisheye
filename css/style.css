@@ -5,7 +5,6 @@ body {
     margin: 0;
 }
 
-
 header {
     display: flex;
     flex-direction: row;
@@ -15,7 +14,7 @@ header {
 }
 
 h1 {
-    color: #901C1C;
+    color: #901c1c;
     margin-right: 100px;
 }
 
@@ -39,12 +38,34 @@ h1 {
     flex-direction: column;
 }
 
-.photographer_section article h2 {
-    color: #D3573C;
-    font-size: 36px;
-}
-
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.photographer_section article h2 {
+    color: #d3573c;
+    font-size: 36px;
+    margin: 0;
+}
+
+.photographer_section article p {
+    color: #901c1c;
+    font-size: 18px;
+    margin: 0;
+}
+
+.photographer_section article span {
+    color: #000000;
+    font-size: 18px;
+    margin: 0;
+}
+
+.photographer_section article small {
+    color: #757575;
+    font-size: 18px;
+    margin-top: 5px;
 }
