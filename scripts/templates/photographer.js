@@ -6,13 +6,19 @@ function photographerTemplate(data) {
     function getUserCardDOM() {
         const article = document.createElement("article");
         article.setAttribute("data-id", id);
+        const link = document.createElement("a");
+        link.setAttribute("href", `photographer.html?id=${id}`);
+
         const img = document.createElement("img");
         img.setAttribute("src", picture);
-        img.setAttribute("alt", name);
+        img.setAttribute("alt", "");
+
         const h2 = document.createElement("h2");
         h2.textContent = name;
-        article.appendChild(img);
-        article.appendChild(h2);
+
+        link.appendChild(img);
+        link.appendChild(h2);
+        article.appendChild(link);
         const p = document.createElement("p");
         p.textContent = `${city}, ${country}`;
         article.appendChild(p);

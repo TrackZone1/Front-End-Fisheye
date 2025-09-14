@@ -1,0 +1,27 @@
+.stats {
+    position: fixed;
+    bottom: 0;
+    right: 100px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    background: #db8876;
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 8px 8px 0 0;
+}
+.stats .likes {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+@media (max-width: 1024px) {
+    .stats {
+        right: 40px;
+    }
+}
+@media (max-width: 640px) {
+    .stats {
+        right: 16px;
+    }
+}

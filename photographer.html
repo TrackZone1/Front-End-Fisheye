@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/photographer.css" rel="stylesheet" type="text/css" />
         <meta charset="utf-8" />
         <link rel="icon" type="image/png" href="assets/favicon.png" />
         <link
@@ -12,7 +12,13 @@
     </head>
     <body>
         <header>
-            <img src="assets/images/logo.png" class="logo" />
+            <a href="./index.html">
+                <img
+                    src="assets/images/logo.png"
+                    class="logo"
+                    alt="Fisheye Home page"
+                />
+            </a>
         </header>
         <main id="main">
             <div class="photograph-header">
@@ -22,28 +28,148 @@
                     <p id="photographerTagline"></p>
                 </div>
                 <div>
-                    <button class="contact_button" onclick="displayModal()">
+                    <button
+                        class="contact_button"
+                        onclick="displayModal()"
+                        aria-haspopup="dialog"
+                        aria-controls="contact_modal"
+                    >
                         Contactez-moi
                     </button>
                 </div>
                 <div id="photographerAvatar"></div>
             </div>
+
+            <section class="toolbar">
+                <label id="sortLabel" class="sort_label">Trier par</label>
+                <div class="sort_wrapper">
+                    <button
+                        class="sort_button"
+                        id="sortButton"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-labelledby="sortLabel sortButton"
+                    >
+                        <span id="sortCurrent">Popularité</span>
+                        <span class="chevron" aria-hidden="true">▾</span>
+                    </button>
+                    <ul
+                        class="sort_list"
+                        id="sortList"
+                        role="listbox"
+                        aria-labelledby="sortLabel sortButton"
+                        tabindex="0"
+                        hidden
+                    >
+                        <li
+                            role="option"
+                            id="optPopularity"
+                            data-value="popularity"
+                            aria-selected="true"
+                            tabindex="-1"
+                        >
+                            Popularité
+                        </li>
+                        <li
+                            role="option"
+                            id="optDate"
+                            data-value="date"
+                            tabindex="-1"
+                        >
+                            Date
+                        </li>
+                        <li
+                            role="option"
+                            id="optTitle"
+                            data-value="title"
+                            tabindex="-1"
+                        >
+                            Titre
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="gallery" class="gallery" aria-live="polite"></section>
         </main>
-        <div id="contact_modal">
-            <div class="modal">
+        <aside class="stats" aria-live="polite">
+            <div class="likes">
+                <span id="totalLikes">0</span> <span aria-hidden="true">❤</span>
+            </div>
+            <div class="price"><span id="dailyPrice">0</span>€ / jour</div>
+        </aside>
+        <div
+            id="contact_modal"
+            role="dialog"
+            aria-labelledby="contact_modal_title"
+            aria-hidden="true"
+        >
+            <div class="modal" tabindex="-1">
                 <header>
-                    <h2>Contactez-moi</h2>
-                    <img src="assets/icons/close.svg" onclick="closeModal()" />
+                    <h2 id="contact_modal_title" role="heading" aria-level="1">
+                        Contactez-moi<br />
+                        <span id="contact_modal_name"></span>
+                    </h2>
+                    <button
+                        class="modal_close"
+                        aria-label="Close Contact form"
+                        onclick="closeModal()"
+                    >
+                        <img src="assets/icons/close.svg" alt="" />
+                    </button>
                 </header>
-                <form>
-                    <div>
-                        <label>Prénom</label>
-                        <input />
+                <form id="contactForm" novalidate>
+                    <div class="formData">
+                        <label for="first">Prénom</label>
+                        <input id="first" name="first" type="text" required />
                     </div>
-                    <button class="contact_button">Envoyer</button>
+                    <div class="formData">
+                        <label for="last">Nom</label>
+                        <input id="last" name="last" type="text" required />
+                    </div>
+                    <div class="formData">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required />
+                    </div>
+                    <div class="formData">
+                        <label for="message">Votre message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            required
+                        ></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        class="contact_button"
+                        aria-label="Send"
+                    >
+                        Envoyer
+                    </button>
                 </form>
             </div>
         </div>
+        <!-- Lightbox -->
+        <div
+            id="lightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-hidden="true"
+            aria-label="image closeup view"
+        >
+            <div class="lightbox" tabindex="-1">
+                <button class="lightbox_close" aria-label="Close dialog">
+                    ×
+                </button>
+                <button class="lightbox_prev" aria-label="Previous image">
+                    ‹
+                </button>
+                <div class="lightbox_content"></div>
+                <button class="lightbox_next" aria-label="Next image">›</button>
+            </div>
+        </div>
+        <script src="/scripts/utils/lightbox.js"></script>
         <script src="/scripts/pages/photographer.js"></script>
         <script src="/scripts/utils/contactForm.js"></script>
     </body>

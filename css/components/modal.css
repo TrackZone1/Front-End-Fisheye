@@ -1,0 +1,123 @@
+#contact_modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    overflow: auto;
+}
+.modal {
+    border-radius: 5px;
+    background-color: #db8876;
+    width: min(560px, 92vw);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 24px;
+    margin: 24px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+}
+.modal header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+.modal header img {
+    cursor: pointer;
+}
+.modal .modal_close {
+    border: 0;
+    background: transparent;
+    padding: 6px;
+    line-height: 0;
+    cursor: pointer;
+}
+.modal header h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.1;
+    font-weight: 500;
+    margin: 0;
+    text-align: left;
+    flex: 1 1 auto;
+}
+.modal header h2 span {
+    display: inline-block;
+    font-weight: 600;
+}
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 8px;
+}
+form label {
+    color: #312e2e;
+    font-size: clamp(18px, 2.5vw, 24px);
+    margin-bottom: 6px;
+}
+form .formData {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    margin-bottom: 16px;
+}
+form input,
+form textarea {
+    width: 100%;
+    min-height: clamp(44px, 6.5vw, 56px);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+form input:focus,
+form textarea:focus {
+    outline: 3px solid #901c1c;
+    outline-offset: 0;
+}
+@media (min-width: 1024px) {
+    .modal header h2 {
+        font-size: 48px;
+    }
+}
+@media (max-width: 480px) {
+    .modal {
+        width: 94vw;
+        max-width: 94vw;
+        padding: 18px;
+    }
+    .modal header h2 {
+        font-size: 32px;
+    }
+    .modal .modal_close img {
+        width: 28px;
+        height: 28px;
+    }
+    form label {
+        font-size: 18px;
+    }
+    form input,
+    form textarea {
+        min-height: 46px;
+    }
+    .contact_button[type="submit"],
+    button.contact_button[type="submit"] {
+        height: 48px;
+    }
+}
+@media (max-width: 600px) {
+    .modal {
+        width: 96vw;
+        max-width: 96vw;
+        padding: 22px;
+    }
+}

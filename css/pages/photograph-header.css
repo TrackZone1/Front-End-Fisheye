@@ -1,0 +1,42 @@
+/* En-tête de la page photographe */
+.photograph-header {
+    background-color: #fafafa;
+    height: 300px;
+    margin: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+.photograph-header img {
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 200px;
+    min-height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.photograph-header h1 {
+    font-size: 64px;
+    font-weight: normal;
+    color: #d3573c;
+    margin: 0;
+}
+.photograph-header #photographerLocation {
+    font-size: 24px;
+    font-weight: normal;
+    color: #901c1c;
+    margin: 0;
+}
+@media (max-width: 1024px) {
+    .photograph-header {
+        margin: 0 40px;
+    }
+}
+@media (max-width: 640px) {
+    .photograph-header {
+        margin: 0 16px;
+        padding: 24px;
+        height: auto;
+    }
+}

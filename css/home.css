@@ -1,0 +1,52 @@
+.photographer_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin-top: 100px;
+}
+.photographer_section article {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.photographer_section article a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+.photographer_section article a:focus-visible {
+    outline: 3px solid #901c1c;
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+.photographer_section article img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.photographer_section article h2 {
+    color: #d3573c;
+    font-size: 36px;
+    margin: 0;
+}
+.photographer_section article p {
+    color: #901c1c;
+    font-size: 18px;
+    margin: 0;
+}
+.photographer_section article span {
+    color: #000000;
+    font-size: 18px;
+    margin: 0;
+}
+.photographer_section article small {
+    color: #757575;
+    font-size: 18px;
+    margin-top: 5px;
+}

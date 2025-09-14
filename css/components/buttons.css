@@ -1,0 +1,18 @@
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901c1c;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact_button[type="submit"],
+button.contact_button[type="submit"] {
+    align-self: flex-start;
+    height: clamp(44px, 6.5vw, 52px);
+    margin-top: 6px;
+}
