@@ -231,11 +231,9 @@ function display404() {
         </div>
     `;
 
-    // Masquer les éléments qui ne sont plus nécessaires
     const aside = document.querySelector(".stats");
     if (aside) aside.style.display = "none";
 
-    // Changer le titre de la page
     document.title = "Photographe introuvable - Fisheye";
 }
 
