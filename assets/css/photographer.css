@@ -1,0 +1,49 @@
+@import url("./base.css");
+@import url("./components/buttons.css");
+@import url("./components/toolbar.css");
+@import url("./components/gallery.css");
+@import url("./components/stats.css");
+@import url("./components/modal.css");
+@import url("./components/lightbox.css");
+@import url("./pages/photograph-header.css");
+
+/* Page d'erreur 404 */
+.error-404 {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-404 h1 {
+    font-size: 2.5rem;
+    color: #901c1c;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.error-404 p {
+    font-size: 1.2rem;
+    color: #525252;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.back-home-btn {
+    display: inline-block;
+    background-color: #901c1c;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.back-home-btn:hover,
+.back-home-btn:focus {
+    background-color: #db8876;
+    outline: 2px solid #901c1c;
+    outline-offset: 2px;
+}

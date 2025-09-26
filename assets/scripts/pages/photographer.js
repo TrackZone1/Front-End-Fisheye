@@ -219,6 +219,26 @@ function bindSort(list) {
     });
 }
 
+function display404() {
+    const main = document.getElementById("main");
+    if (!main) return;
+
+    main.innerHTML = `
+        <div class="error-404">
+            <h1>Photographe introuvable</h1>
+            <p>Désolé, le photographe que vous recherchez n'existe pas.</p>
+            <a href="index.html" class="back-home-btn">Retour à l'accueil</a>
+        </div>
+    `;
+
+    // Masquer les éléments qui ne sont plus nécessaires
+    const aside = document.querySelector(".stats");
+    if (aside) aside.style.display = "none";
+
+    // Changer le titre de la page
+    document.title = "Photographe introuvable - Fisheye";
+}
+
 async function displayData(photographer, media) {
     renderHeader(photographer);
     const sorted = sortMedia(media, "popularity");
@@ -233,10 +253,18 @@ async function init() {
 
     if (!photographerId) {
         console.error("Aucun ID de photographe trouvé dans l'URL");
+        display404();
         return;
     }
 
     const { photographer, media } = await getPhotographer(photographerId);
+
+    if (!photographer) {
+        console.error(`Aucun photographe trouvé avec l'ID: ${photographerId}`);
+        display404();
+        return;
+    }
+
     displayData(photographer, media);
 }
 
